@@ -142,10 +142,10 @@ base_cursos_unica %>%
     scale_fill_manual(values = c(rep("#cccccc", 9), "#c95832", rep("#cccccc", 5), rep("#cccccc", 8))) +
     geom_label(aes(label =  ifelse(NO_CINE_AREA_GERAL %in% c("Saúde e bem-estar"), 
                                    round(quant_ingressantes/1000,1), NA_character_)), 
-               vjust = -0.5, position = position_stack(0),
+               vjust = -0.5, position = position_dodge(0.9),
                size = 6, show.legend = F, color = 'white') +
     scale_x_continuous(breaks = seq(2013, 2021, 1), limits = c(2013.5,2021.5)) +
-    ylim(0, 2900000)+
+    ylim(0, 900000)+
     labs(title = 'Evolução da Quantidade de Ingressantes', subtitle = 'Em destaque "vermelho" estão cursos da Grande Área: Saúde e bem-estar',
          x = "Ano", y = "Quant. (em mil)",
          caption = "Fonte: Censo do Ensino Superior. Acesso em: 03/2023") +
@@ -554,10 +554,10 @@ ggplot(data = grafico_selecao, aes(x = media_turma, y = perc_privada, size = ing
     scale_x_continuous(breaks = seq(0, 800, 25), limits = c(0, 800)) +
     annotate("text", x = 0, y = yint+3, label = paste('Média: ', round(yint,1),'%'), col = '#010221', size = 4, fontface = 'bold')+
     annotate("text", x = xint + 5.5, y = 0, label = paste('Média: ', round(xint,1)), col = '#010221', size = 4, fontface = 'bold') +
-    annotate("text", x = 770, y = 100, label = 'Destaques', col = '#00558c', size = 8, fontface = 'bold') +
-    annotate("text", x = 5, y = 100, label = 'Atenção', col = '#EDAA25', size = 8, fontface = 'bold') +
-    annotate("text", x = 770, y = 0, label = 'Atenção', col = '#EDAA25', size = 8, fontface = 'bold') +
-    scale_color_manual(values = c( '#00558c', "#EDAA25", '#C43302','#cccccc')) +
+    annotate("text", x = 770, y = 100, label = 'Destaques', col = '#8AC341', size = 8, fontface = 'bold') +
+    annotate("text", x = 5, y = 100, label = 'Atenção', col = '#c95832', size = 8, fontface = 'bold') +
+    annotate("text", x = 770, y = 0, label = 'Atenção', col = '#c95832', size = 8, fontface = 'bold') +
+    scale_color_manual(values = c( '#8AC341', "#c95832", '#E3C51B','#cccccc')) +
     #facet_grid(.~NU_ANO_CENSO)+
     theme_ipsum() +
     theme(legend.position = 'none',
@@ -652,10 +652,10 @@ ggplot(data = grafico_selecao, aes(x = media_turma, y = perc_privada, size = ing
     scale_x_continuous(breaks = seq(0, 800, 25), limits = c(0, 300)) +
     annotate("text", x = 0, y = yint+3, label = paste('Média: ', round(yint,1),'%'), col = '#010221', size = 4, fontface = 'bold')+
     annotate("text", x = xint + 5.5, y = 0, label = paste('Média: ', round(xint,1)), col = '#010221', size = 4, fontface = 'bold') +
-    annotate("text", x = 300, y = 100, label = 'Destaques', col = '#00558c', size = 8, fontface = 'bold') +
-    annotate("text", x = 5, y = 100, label = 'Atenção', col = '#EDAA25', size = 8, fontface = 'bold') +
-    annotate("text", x = 300, y = 0, label = 'Atenção', col = '#EDAA25', size = 8, fontface = 'bold') +
-    scale_color_manual(values = c( '#00558c', "#EDAA25", '#EDAA25', '#C43302','#cccccc')) +
+    annotate("text", x = 300, y = 100, label = 'Destaques', col = '#8ac341', size = 8, fontface = 'bold') +
+    annotate("text", x = 5, y = 100, label = 'Atenção', col = '#c95832', size = 8, fontface = 'bold') +
+    annotate("text", x = 300, y = 0, label = 'Atenção', col = '#c95832', size = 8, fontface = 'bold') +
+    scale_color_manual(values = c('#8AC341', "#c95832","#c95832", '#E3C51B','#cccccc')) +
     #facet_grid(.~NU_ANO_CENSO)+
     theme_ipsum() +
     theme(legend.position = 'none',
